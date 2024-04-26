@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>zxcvbn tests</title>
+    <title>Password checker</title>
 
     <script type="text/javascript" src="jquery.js">
     </script>
@@ -8,6 +8,39 @@
     </script>
     <script data-main="demo" src="require.js">
     </script>
+    <script src="bower_components/zxcvbn/dist/zxcvbn.js">
+    </script>
+    <style type="text/css">
+      :root {
+      @media (prefers-color-scheme: light) {
+        background: #f5f5f5;
+                    color: #000000;
+
+
+      .match-sequence > table:nth-child(odd) {
+        background-color: #ccc;
+      }
+      .match-sequence > table:nth-child(even) {
+        background-color: #eee;
+      }
+                }
+        @media (prefers-color-scheme: dark) {
+                    background: #171717;
+                    color: #fff;
+                }
+
+
+      .match-sequence > table:nth-child(odd) {
+        background-color: #2e2e2e;
+      }
+      .match-sequence > table:nth-child(even) {
+        background-color: #414141;
+      }
+* {
+      font-family: Inter, Helvetica, sans-serif !important;
+}
+          }
+    </style>
   </head>
   <body>
     <style type="text/css">
@@ -25,30 +58,25 @@
         margin-bottom: 100px;
       }
 
-      .match-sequence > table:nth-child(odd) {
-        background-color: #ccc;
-      }
-      .match-sequence > table:nth-child(even) {
-        background-color: #eee;
-      }
-
       #examples-container {
         margin-top: 200px;
       }
 
     </style>
-    <h1><a href="http://tech.dropbox.com/?p=165">introduction</a></h1>
-    <h1><a href="https://github.com/lowe/zxcvbn">zxcvbn on github</a></h1>
-    <h1>demo</h1>
+    <h1>Password Strength Checker</h1>
 
-    <input id="search-bar" type="text" size="50" />
+    <input id="search-bar" type="text" size="50" title="pwdfield"/>
     <div id="search-results">
     </div>
 
     <div id="examples-container">
-    <h1 id="examples">examples</h1>
+    <h1 id="examples">More info</h1>
     <div id="results">
     </div>
+    <footer>
+      <p>Note: All processing happens locally.</p>
+      <a href="https://github.com/jackchatelain/zxcvbn">Powered by zxcvbn</a>
+    </footer>
 
   </body>
 </html>
